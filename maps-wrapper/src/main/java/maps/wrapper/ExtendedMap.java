@@ -852,4 +852,15 @@ public class ExtendedMap {
         }
         return new TileOverlay(null, null);
     }
+
+    public boolean setMapStyle(MapStyleOptions style){
+        if (isGoogle()) {
+            return googleMap.setMapStyle(style.google);
+        }
+        if (isHuawei()){
+            return huaweiMap.setMapStyle(style.huawei);
+        }
+
+        return false;
+    }
 }
