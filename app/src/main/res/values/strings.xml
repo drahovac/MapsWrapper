@@ -233,4 +233,7 @@
 
     <string name="route_demo_label">Routes</string>
     <string name="route_demo_label_description">Demonstrates how to use routing.</string>
+    <!-- Dark mode Demo -->
+    <string name="dark_mode_demo_label">Dark Mode</string>
+    <string name="dark_mode_demo_description">Demonstrates how to add map style options for dark mode.</string>
 </resources>

@@ -20,10 +20,6 @@ package maps.wrapper.test.app;
  */
 public final class DemoDetailsList {
 
-    /** This class should not be instantiated. */
-    private DemoDetailsList() {
-    }
-
     public static final DemoDetails[] DEMOS = {
             new DemoDetails(R.string.basic_map_demo_label,
                     R.string.basic_map_demo_description,
@@ -90,5 +86,13 @@ public final class DemoDetailsList {
             new DemoDetails(R.string.tile_coordinate_demo_label,
                     R.string.tile_coordinate_demo_description,
                     TileCoordinateDemoActivity.class),
+
+            new DemoDetails(R.string.dark_mode_demo_label,
+                    R.string.dark_mode_demo_description,
+                    DarkModeMapActivity.class),
     };
+
+    /** This class should not be instantiated. */
+    private DemoDetailsList() {
+    }
 }

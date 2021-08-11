@@ -39,6 +39,7 @@
         <activity android:name=".LiteListDemoActivity" />
         <activity android:name=".MarkerDemoActivity" />
         <activity android:name=".MapInPagerDemoActivity" />
+        <activity android:name=".DarkModeMapActivity" />
 
 
         <meta-data
