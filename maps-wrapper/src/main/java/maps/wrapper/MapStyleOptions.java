@@ -5,24 +5,28 @@ import android.content.res.Resources.NotFoundException;
 
 public class MapStyleOptions {
 
-    com.huawei.hms.maps.model.MapStyleOptions huawei;
     com.google.android.gms.maps.model.MapStyleOptions google;
+    com.huawei.hms.maps.model.MapStyleOptions huawei;
 
     public static MapStyleOptions loadRawResourceStyle(
         Context clientContext,
         int googleResourceId,
         int huaweiResourceId) throws NotFoundException {
-        return new MapStyleOptions(
-            com.huawei.hms.maps.model.MapStyleOptions.loadRawResourceStyle(clientContext, huaweiResourceId),
-            com.google.android.gms.maps.model.MapStyleOptions.loadRawResourceStyle(clientContext, googleResourceId)
-        );
+        MapStyleOptions options = new MapStyleOptions();
+        options.huawei = com.huawei.hms.maps.model.MapStyleOptions.loadRawResourceStyle(clientContext, huaweiResourceId);
+        options.google = com.google.android.gms.maps.model.MapStyleOptions.loadRawResourceStyle(clientContext, googleResourceId);
+
+        return options;
     }
 
-    MapStyleOptions(
-        com.huawei.hms.maps.model.MapStyleOptions huawei,
-        com.google.android.gms.maps.model.MapStyleOptions google) {
+    public MapStyleOptions(
+        String googleJson,
+        String huaweiJson
+    ) {
+        this.google = new com.google.android.gms.maps.model.MapStyleOptions(googleJson);
+        this.huawei = new com.huawei.hms.maps.model.MapStyleOptions(huaweiJson);
+    }
 
-        this.huawei = huawei;
-        this.google = google;
+    private MapStyleOptions() {
     }
 }
