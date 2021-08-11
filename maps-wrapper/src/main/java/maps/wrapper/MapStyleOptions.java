@@ -19,14 +19,14 @@ public class MapStyleOptions {
         return options;
     }
 
+    private MapStyleOptions() {
+    }
+
     public MapStyleOptions(
         String googleJson,
         String huaweiJson
     ) {
         this.google = new com.google.android.gms.maps.model.MapStyleOptions(googleJson);
         this.huawei = new com.huawei.hms.maps.model.MapStyleOptions(huaweiJson);
-    }
-
-    private MapStyleOptions() {
     }
 }
